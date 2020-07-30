@@ -1,13 +1,17 @@
 .button {
-    background: #996384;
+    background: #f7f7f7;
     border-radius: 20px;
     height: 40px;
     width: 70px;
     font-size: 14px;
+    color: #1d1d1d;
     align-items: center;
     justify-content: center;
     display: flex;
-    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .title {
@@ -16,9 +20,9 @@
 }
 
 .scene {
+    align-items: center;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     width: 40%;
 }
 
