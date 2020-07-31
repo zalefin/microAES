@@ -12,17 +12,19 @@ const INV_SUB = [
     ['d', '5', 'a', '9'],
 ];
 
+const CELL_SIZE = 4;
+
 const nibble2bits = function(nibble) {
     let t = ( parseInt(nibble, 16) >>> 0 ).toString(2);
     t = t.split('');
-    t = t.slice(-4); // only grab last 4 in case longer than 4 bits
-    t = Array(4 - t.length).fill(0).concat(t);
+    t = t.slice(-CELL_SIZE); // only grab last 4 in case longer than 4 bits
+    t = Array(CELL_SIZE - t.length).fill(0).concat(t);
     t = t.map(v => parseInt(v));
     return t;
 }
 
 const bits2nibble = function(bits) {
-    let t = bits.slice();
+    let t = bits.slice(-CELL_SIZE);
     t = t.map(v => v.toString(10));
     t = t.join('');
     t = parseInt(t, 2).toString(16);
