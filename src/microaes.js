@@ -39,32 +39,35 @@ const bitsState2nibbleState = function(bitsState) {
     return bitsState.map(r => r.map(v => bits2nibble(v)));
 }
 
+/*
+ * *********************************
+ * NOTE
+ * 
+ * All operations assume that the input is in BITS form
+ *
+*/
 
 const SubBytes = function(state) {
     const statep = state.slice();
 
     return statep;
 };
+
 const ShiftRows = function(state) {
     const statep = state.slice();
 
     return statep;
 };
+
 const MixColumns = function(state) {
     const statep = state.slice();
 
     return statep;
 };
+
 const AddRoundKey = function(state, w) {
     const statep = state.slice();
 
     return statep;
 };
-
-let a = [['a', 'b'], ['1', '8']]
-console.log(a);
-a = nibbleState2bitsState(a);
-console.log(a);
-a = bitsState2nibbleState(a);
-console.log(a);
 
