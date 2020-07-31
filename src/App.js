@@ -9,7 +9,7 @@ const smoothButton = function(onClick, text, delay) {
 	onClick={onClick}
 	initial={{opacity: 0}}
 	animate={{opacity: 1, transition: {duration: 1.5, delay: delay}}}
-	whileHover={{scale: 1.05, transition: {duration: 0.5}}}
+	whileHover={{scale: 1.05, transition: {duration: 0.3}}}
 	whileTap={{scale: 0.9}}>
 	{text}
 	</motion.div>
@@ -25,10 +25,17 @@ class TitleScene extends React.Component {
     render() {
 	return (
 	    <div className='scene'>
+	    <div style={{marginBottom: '40px'}}>
 	    <motion.div className='title'
 		initial={{opacity: 0}}
 		animate={{opacity: 1, transition: {duration: 1.5}}}
 	    >microAES</motion.div>
+	    <motion.div
+		style={{'font-size': '10px'}}
+		initial={{opacity: 0}}
+		animate={{opacity: 1, transition: {duration: 1.5}}}
+	    >a visual demonstration of the Rijndael algorithm. minified.</motion.div>
+	    </div>
 	    {smoothButton(this.props.encryptHandler, 'encrypt', 1)}
 	    {smoothButton(this.props.decryptHandler, 'decrpyt', 1.2)}
 	    </div>
