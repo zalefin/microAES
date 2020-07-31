@@ -31,6 +31,14 @@ const bits2nibble = function(bits) {
     return t;
 }
 
+const bits2ints = function(bits) {
+    let a = bits.slice(0, 2);
+    let b = bits.slice(2, 4);
+    a = parseInt(bits2nibble(a), 16);
+    b = parseInt(bits2nibble(b), 16);
+    return [a, b];
+}
+
 const nibbleState2bitsState = function(nibbleState) {
     return nibbleState.map(r => r.map(v => nibble2bits(v)));
 }
