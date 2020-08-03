@@ -1,3 +1,12 @@
+.cell {
+    width: 40px;
+    height: 40px;
+    background: #f7f7f7;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+}
+
 .button {
     background: #f7f7f7;
     border-radius: 20px;
