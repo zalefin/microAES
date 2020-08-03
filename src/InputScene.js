@@ -34,7 +34,7 @@ class DataForm extends React.Component {
     }
 }
 
-class InputScene extends React.Component {
+class InputView extends React.Component {
     constructor(props) {
 	super(props)
     }
@@ -47,4 +47,4 @@ class InputScene extends React.Component {
     }
 }
 
-export default InputScene;
+export default InputView;

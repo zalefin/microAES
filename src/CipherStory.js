@@ -1,9 +1,9 @@
 import React from 'react';
-import TitleScene from './TitleScene';
-import InputScene from './InputScene';
+import TitleView from './TitleScene';
+import InputView from './InputScene';
 
 
-class CipherStory extends React.Component {
+class StoryView extends React.Component {
     constructor(props) {
 	super(props);
 	this.state = {
@@ -15,10 +15,10 @@ class CipherStory extends React.Component {
 	let scene;
 	switch(this.state.scene) {
 	    case 'title':
-		scene = <TitleScene encryptHandler={() => this.setState({scene: 'input'})}/>;
+		scene = <TitleView encryptHandler={() => this.setState({scene: 'input'})}/>;
 		break;
 	    case 'input':
-		scene = <InputScene beginHandler={() => this.setState({scene: 'firstop'})}/>;
+		scene = <InputView beginHandler={() => this.setState({scene: 'firstop'})}/>;
 		break;
 	    case 'firstop':
 		break;
@@ -33,4 +33,4 @@ class CipherStory extends React.Component {
     }
 }
 
-export default CipherStory;
+export default StoryView;

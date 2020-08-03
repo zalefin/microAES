@@ -2,7 +2,7 @@ import React from 'react';
 import {motion} from 'framer-motion';
 import SmoothButton from './SmoothButton';
 
-class TitleScene extends React.Component {
+class TitleView extends React.Component {
     constructor(props) {
 	super(props);
 
@@ -30,4 +30,4 @@ class TitleScene extends React.Component {
     }
 }
 
-export default TitleScene;
+export default TitleView;
