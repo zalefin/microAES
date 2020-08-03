@@ -1,16 +1,3 @@
-const SUB = [
-    ['6', '0', '9', 'a'],
-    ['4', 'd', '1', '8'],
-    ['2', 'f', 'e', '7'],
-    ['3', 'c', '5', 'b'],
-];
-
-const INV_SUB = [
-    ['1', '6', '8', 'c'],
-    ['4', 'e', '0', 'b'],
-    ['7', '2', '3', 'f'],
-    ['d', '5', 'a', '9'],
-];
 
 const CELL_SIZE = 4;
 
@@ -46,6 +33,20 @@ const nibbleState2bitsState = function(nibbleState) {
 const bitsState2nibbleState = function(bitsState) {
     return bitsState.map(r => r.map(v => bits2nibble(v)));
 }
+
+export const SUB = [
+    ['6', '0', '9', 'a'],
+    ['4', 'd', '1', '8'],
+    ['2', 'f', 'e', '7'],
+    ['3', 'c', '5', 'b'],
+];
+
+export const INV_SUB = [
+    ['1', '6', '8', 'c'],
+    ['4', 'e', '0', 'b'],
+    ['7', '2', '3', 'f'],
+    ['d', '5', 'a', '9'],
+];
 
 /*
  * *********************************
