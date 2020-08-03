@@ -1,20 +1,9 @@
 import React from 'react';
 import './App.css';
 import {motion} from 'framer-motion';
+import {SUB, INV_SUB} from './microaes';
+import SmoothButton from './SmoothButton';
 
-const smoothButton = function(onClick, text, delay) {
-    return (
-	<motion.div
-	className='button'
-	onClick={onClick}
-	initial={{opacity: 0}}
-	animate={{opacity: 1, transition: {duration: 1.5, delay: delay}}}
-	whileHover={{scale: 1.05, transition: {duration: 0.3}}}
-	whileTap={{scale: 0.9}}>
-	{text}
-	</motion.div>
-    );
-}
 
 class TitleScene extends React.Component {
     constructor(props) {
@@ -36,8 +25,8 @@ class TitleScene extends React.Component {
 		animate={{opacity: 1, transition: {duration: 1.5}}}
 	    >a visual demonstration of the Rijndael algorithm. minified.</motion.div>
 	    </div>
-	    {smoothButton(this.props.encryptHandler, 'encrypt', 1)}
-	    {smoothButton(this.props.decryptHandler, 'decrpyt', 1.2)}
+	    {SmoothButton(this.props.encryptHandler, 'encrypt', 1)}
+	    {SmoothButton(this.props.decryptHandler, 'decrpyt', 1.2)}
 	    </div>
 
 	);
@@ -71,7 +60,7 @@ class DataForm extends React.Component {
 	    <input id='datain' type="text" value={this.state.data} onChange={this.handleChangeData} />
 	    <br/>
 	    <input id='keyin' type="text" value={this.state.key} onChange={this.handleChangeKey} />
-	    {smoothButton(this.handleSubmit, 'begin', 1)}
+	    {SmoothButton(this.handleSubmit, 'begin', 1)}
 	    </div>
 	);
     }
@@ -83,13 +72,9 @@ class InputScene extends React.Component {
     }
     render() {
 	return (
-	    <span>
-	    <div>&#x1F82C</div>
 	    <div className='scene'>
 	    <DataForm handleSubmit={this.props.beginHandler}/>
 	    </div>
-	    <div>&#x1F82E</div>
-	    </span>
 	);
     }
 }
@@ -116,7 +101,9 @@ class CipherStory extends React.Component {
 	}
 	return (
 	    <div className='story'>
+	    <div className='scenectl'> {'\u2190'} </div>
 	    {scene}
+	    <div className='scenectl'> {'\u2192'} </div>
 	    </div>
 	);
     }
