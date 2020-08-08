@@ -1,47 +1,28 @@
 import React from 'react';
 
 
-class DummyNumScene extends React.Component {
-    render() {
-	return (
-	    <div className='scene'>
-	    <div className='cell'>
-	    {this.props.n}
-	    </div>
-	    </div>
-	);
-    }
-}
-
-
 class StoryView extends React.Component {
     constructor(props) {
 	super(props);
 	this.state = {
 	    si: 0,
-	    story: this.props.story,
 	}
+	this.handleLeft = this.handleLeft.bind(this);
+	this.handleRight = this.handleRight.bind(this);
     }
 
     setScene(i) {
 	this.setState({si: i});
     }
 
-    nextScene() {
-	let i = this.state.si;
-	if(i == 0) return;
-	this.setScene(i);
-    }
-
     prevScene() {
 	let i = this.state.si;
-	if(i >= this.state.scenes.length) return;
-	this.setScene(i);
+	this.setScene(i - 1);
     }
 
-    renderScene() {
+    nextScene() {
 	let i = this.state.si;
-	return this.state.scenes[i]();
+	this.setScene(i + 1);
     }
 
     handleLeft() { this.prevScene(); }
@@ -53,14 +34,15 @@ class StoryView extends React.Component {
 	    <div className='scenectl' onClick={this.handleLeft}> {'\u2190'} </div>
 	    :
 	    <div className='scenectl'></div>
-	const rightctl = this.state.si >= this.state.story.states.length ? 
+	const rightctl = this.state.si < this.props.i_max ? 
 	    <div className='scenectl' onClick={this.handleRight}> {'\u2192'} </div>
 	    :
 	    <div className='scenectl'></div>
+
 	return (
 	    <div className='story'>
 	    {leftctl}
-	    {this.renderScene()}
+	    <this.props.t_story si={this.state.si}/>
 	    {rightctl}
 	    </div>
 	);
